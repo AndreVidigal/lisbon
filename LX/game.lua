@@ -62,13 +62,14 @@ function createBonus()
 	
 	tableIcons = {}
 
-	table.insert(tableIcons, "images/icons/icon2.png")
-    table.insert(tableIcons, "images/icons/icon4.png")
 
     bonusGroup = display.newGroup( )    
 
-    local icon1 = display.newImageRect( tableIcons[1], 16, 16)
-    local icon2 = display.newImageRect( tableIcons[2], 16, 16 )
+    local icon1 = display.newImageRect( "images/icons/icon2.png", 86, 86)
+    local icon2 = display.newImageRect( "images/icons/icon4.png", 86, 86 )
+
+    table.insert(tableIcons, icon1)
+    table.insert(tableIcons, icon2)
 
     icon1.alpha = 0.0
     icon2.alpha = 0.0
@@ -89,7 +90,22 @@ function createBonus()
 end
 
 function showIcon()
-	print("Show Icon ", tableIcons[bonusIndex].x, tableIcons[bonusIndex].y)
+
+	local street = math.random(1, #play.connections)
+
+	local size = #play.connections[street].cruzaCom
+
+	local min = play.connections[street].cruzaCom[1].offset * 100
+	local max = play.connections[street].cruzaCom[size].offset * 100
+
+	local randomOffset = math.random(min, max) / 100
+
+	x, y = setOfLines[street](randomOffset)
+	print(randomOffset, x, y)
+
+	tableIcons[bonusIndex].x = x
+	tableIcons[bonusIndex].y = y
+
 	transition.fadeIn(tableIcons[bonusIndex], {time=500})
 	bonusIndex = bonusIndex + 1
 end

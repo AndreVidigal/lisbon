@@ -1,0 +1,310 @@
+{	
+	"connections": [
+	{
+	  	"estaRua": 1,	  	
+	   	"cruzaCom": [ 	   		
+	   		{ "rua": 4,  "offset":0.01,  "crossing":1  },
+	   		{ "rua": 10, "offset":0.26,  "crossing":2  },
+	   		{ "rua": 9,  "offset":0.63,  "crossing":3  },
+	   		{ "rua": 2,  "offset":1.02,  "crossing":40 }	   		
+	   		]
+	},
+	{
+	  	"estaRua": 2,	  	
+	   	"cruzaCom": [
+ 			{ "rua": 1,  "offset":0.21, "crossing": 40 },
+ 			{ "rua": 3,  "offset":0.21, "crossing": 40 },
+ 			{ "rua": 18, "offset":0.8,  "crossing": 41 },
+	   		{ "rua": 3,  "offset":0.8,  "crossing": 41 }
+	   		]
+	},
+	{
+	  	"estaRua": 3,
+	   	"cruzaCom": [
+ 			{ "rua": 2,  "offset":0.2,  "crossing": 41 },
+ 			{ "rua": 1,  "offset":0.2,  "crossing": 40 },
+ 			{ "rua": 7,  "offset":0.47, "crossing": 42 },
+	   		{ "rua": 2,  "offset":0.8,  "crossing": 40 },
+	   		{ "rua": 18, "offset":0.8,  "crossing": 41 }
+	   		]
+	},	
+	{
+	  	"estaRua": 4,	  	
+	   	"cruzaCom": [
+	   		{ "rua": 22, "offset":0.0,  "crossing":9 },
+ 			{ "rua": 1,  "offset":0.98, "crossing":1 }  		
+	   		]
+	},
+	{
+	  	"estaRua": 5,	  	
+	   	"cruzaCom": [
+	   		{ "rua": 19, "offset":0.0,   "crossing":26 },
+	   		{ "rua": 15, "offset":0.26,  "crossing":27 },
+	   		{ "rua": 35, "offset":0.51,  "crossing":25 },
+	   		{ "rua": 28, "offset":0.65,  "crossing":18 },
+	   		{ "rua": 32, "offset":0.77,  "crossing":11 },
+ 			{ "rua": 8,  "offset":1.0,   "crossing":10 },
+ 			{ "rua": 7,  "offset":1.0,   "crossing":10 }	   		
+	   		]
+	},
+	{
+	  	"estaRua": 6,	  	
+	   	"cruzaCom": [
+	   		{ "rua": 12, "offset":0.07, "crossing":35  },
+	   		{ "rua": 34, "offset":0.29, "crossing":34  },
+	   		{ "rua": 15, "offset":0.5,  "crossing":33  },
+	   		{ "rua": 35, "offset":0.71, "crossing":22  },
+ 			{ "rua": 14, "offset":0.99, "crossing":19  }	   		
+	   		]
+	},
+	{
+	  	"estaRua": 7,
+	   	"cruzaCom": [
+	   		{ "rua": 8, "offset":0.0,  "crossing":10 },
+	   		{ "rua": 5, "offset":0.0,  "crossing":10 },
+ 			{ "rua": 3, "offset":1.0,  "crossing":42 }	   		
+	   		]
+	},
+	{
+	  	"estaRua": 8,
+	   	"cruzaCom": [
+	   		{ "rua": 11, "offset":0.0, "crossing":5  },	   		
+	   		{ "rua": 9,  "offset":0.62, "crossing":4  },
+	   		{ "rua": 5,  "offset":0.99, "crossing":10 },
+	   		{ "rua": 7,  "offset":0.99, "crossing":10 }
+	   	]	   	
+	},
+	{
+	  	"estaRua": 9,
+	   	"cruzaCom": [
+	   		{ "rua": 14, "offset":0.0,  "crossing":8 },
+			{ "rua": 8,  "offset":0.28, "crossing":4 },	   		
+	   		{ "rua": 1,  "offset":1,    "crossing":3 }  		
+	   		]
+	},
+	{
+	  	"estaRua": 10,	  	
+	   	"cruzaCom": [
+			{ "rua": 22,  "offset":0.01, "crossing": 6 },
+			{ "rua": 11,  "offset":0.01, "crossing": 6 },
+	   		{ "rua": 1,   "offset":1.0,  "crossing":2  }
+	   		]	   		
+	},
+	{
+	  	"estaRua": 11,
+	   	"cruzaCom": [
+	   		{ "rua": 12, "offset":0.03, "crossing":23 },	   		
+	   		{ "rua": 13, "offset":0.18, "crossing":24 },	   		
+	   		{ "rua": 15, "offset":0.25, "crossing":43 },
+	   		{ "rua": 14, "offset":0.63, "crossing":7 },
+	   		{ "rua": 8,  "offset":0.89, "crossing":5 },
+	   		{ "rua": 10, "offset":1.0,  "crossing":6 },
+			{ "rua": 22, "offset":1.0,  "crossing":6 }
+	   		]	  	   		
+	},
+	{
+	  	"estaRua": 12,
+	   	"cruzaCom": [
+	   		{ "rua": 11, "offset":0.03,  "crossing":23 },
+	   		{ "rua": 6,  "offset":0.615, "crossing":35 },
+	   		{ "rua": 19, "offset":1.0,  "crossing":38 }
+	   		]	  	   		
+	},
+	{
+	  	"estaRua": 13,
+	   	"cruzaCom": [
+	   		{ "rua": 12, "offset":0.05, "crossing":35 },	   		
+	   		{ "rua": 6,  "offset":0.05, "crossing":35 },
+	   		{ "rua": 11, "offset":1.0,  "crossing":24 }	   		
+	   		]	  	   		
+	},
+	{
+	  	"estaRua": 14,
+	   	"cruzaCom": [	   		
+	   		{ "rua": 14, "offset":0.0,   "crossing":-3  },
+	   		{ "rua": 11, "offset":0.545, "crossing":7  },
+	   		{ "rua": 6,  "offset":0.85,  "crossing":19 },
+	   		{ "rua": 9,  "offset":0.975, "crossing":8  },	   			   		
+	   		{ "rua": 32, "offset":0.99,   "crossing":-1 }
+	   		]	  	   		
+	},
+	{
+	  	"estaRua": 15,
+	   	"cruzaCom": [
+	   		{ "rua": 11, "offset":0.0,  "crossing":43  },
+	   		{ "rua": 6,  "offset":0.31, "crossing":33  },
+	   		{ "rua": 34, "offset":0.61, "crossing":21 },
+	   		{ "rua": 5,  "offset":0.78, "crossing":27  },	   		
+	   		{ "rua": 17, "offset":1.0,  "crossing":20 }
+	   		]	  	   		
+	},
+	{
+	  	"estaRua": 16,
+	   	"cruzaCom": [
+	   		{ "rua": 18, "offset":0.01, "crossing": 13  },
+	   		{ "rua": 32,  "offset":1.0,  "crossing":12 }
+	   		]	  	   		
+	},
+	{
+	  	"estaRua": 17,
+	   	"cruzaCom": [
+	   		{ "rua": 19, "offset":0.0,   "crossing":37 },
+	   		{ "rua": 21, "offset":0.24,  "crossing":20 },	   		
+	   		{ "rua": 15, "offset":0.24,  "crossing":20 },
+	   		{ "rua": 26, "offset":1.0,   "crossing":28 },
+	   		{ "rua": 27, "offset":1.0,   "crossing":28 }
+	   		]	  	   		
+	},
+	{
+	  	"estaRua": 18,
+	   	"cruzaCom": [
+	   		{ "rua": 3,  "offset":-0.04, "crossing":41  },
+	   		{ "rua": 16, "offset":0.55,  "crossing":13  },
+	   		{ "rua": 31, "offset":0.9,   "crossing":15  },	   		
+	   		{ "rua": 25, "offset":0.98,  "crossing":-1  }
+	   		]	  	   		
+	},		
+	{
+	  	"estaRua": 19,
+	   	"cruzaCom": [
+	   		{ "rua": 12, "offset":0.075,  "crossing": -1 },
+	   		{ "rua": 20, "offset":0.075,  "crossing": -1 },
+			{ "rua": 5,  "offset":0.58,   "crossing": 26 },
+	   		{ "rua": 17, "offset":0.71,   "crossing": 37 },
+	   		{ "rua": 23, "offset":0.85,   "crossing": 39 },
+	   		{ "rua": 20, "offset":0.85,   "crossing": 39 }
+	   		]	  	   	
+	},
+	{
+	  	"estaRua": 20,
+	   	"cruzaCom": [
+	   		{ "rua": 23, "offset":0.25,  "crossing": 39 }, 
+	   		{ "rua": 19, "offset":0.25,  "crossing": 39 },
+	   		{ "rua": 12, "offset":0.69,  "crossing": 38 },
+			{ "rua": 19, "offset":0.69,  "crossing": 38 }
+	   		]	  	   	
+	},
+	{
+	  	"estaRua": 21,
+	   	"cruzaCom": [
+			{ "rua": 17, "offset":0.0,  "crossing":20 },
+			{ "rua": 33, "offset":0.22, "crossing":30 },
+	   		{ "rua": 26, "offset":0.51, "crossing":32 },
+	   		{ "rua": 30, "offset":1.0,  "crossing":-1 }
+	   		]	  	   	
+	},
+	{
+	  	"estaRua": 22,
+	   	"cruzaCom": [
+			{ "rua": 4,  "offset":0.06, "crossing":9 },
+			{ "rua": 10, "offset":0.99, "crossing":6 },
+	   		{ "rua": 11, "offset":0.99, "crossing":6 }
+	   		]	  	   	
+	},
+	{
+	  	"estaRua": 23,
+	   	"cruzaCom": [
+	   		{ "rua": 20, "offset":0.05, "crossing":39 },
+			{ "rua": 33, "offset":0.5,  "crossing":31 },	   		
+			{ "rua": 24, "offset":0.96, "crossing":-2 }
+	   		]	  	   	
+	},
+	{
+	  	"estaRua": 24,
+	   	"cruzaCom": [
+	   		{ "rua": 24, "offset":0.0,  "crossing":-3  },
+			{ "rua": 23, "offset":1.00, "crossing":-2 }
+	   		]	  	   	
+	},
+	{
+	  	"estaRua": 25,
+	   	"cruzaCom": [
+			{ "rua": 18, "offset":0.0,  "crossing":15 },
+			{ "rua": 29, "offset":1.0,  "crossing":16 },
+	   		{ "rua": 30, "offset":1.0,  "crossing":16 }
+	   		]	  	   	
+	},
+	{
+	  	"estaRua": 26,
+	   	"cruzaCom": [
+			{ "rua": 21, "offset":0.0,  "crossing":32 },
+			{ "rua": 17, "offset":1.0,  "crossing":28},
+	   		{ "rua": 27, "offset":1.0,  "crossing":28 }
+	   		]	  	   	
+	},
+	{
+		"estaRua": 27,
+	   	"cruzaCom": [
+			{ "rua": 17,  "offset":0.0,  "crossing":28 },
+			{ "rua": 26,  "offset":0.0,  "crossing":28 },
+			{ "rua": 28,  "offset":1.0,  "crossing":36 }
+	   		]	  	   	
+	},
+	{
+		"estaRua": 28,
+	   	"cruzaCom": [
+			{ "rua": 5,  "offset":0.0,  "crossing":18 },
+			{ "rua": 27, "offset":0.05, "crossing":36 },
+			{ "rua": 29, "offset":1.0,  "crossing":-2 }
+	   		]	  	   	
+	},
+	{
+	 	"estaRua": 29,
+	   	"cruzaCom": [			
+			{ "rua": 25, "offset":0.0,  "crossing":16 },
+			{ "rua": 31, "offset":0.73, "crossing":17 },
+	   		{ "rua": 28, "offset":0.94, "crossing":-2 },
+	   		{ "rua": 30, "offset":1.0,  "crossing":16 }
+	   		]	  	   	
+	},	
+	{
+	 	"estaRua": 30,
+	   	"cruzaCom": [
+	   		{ "rua": 21, "offset":0.1,  "crossing":-2 },
+			{ "rua": 25, "offset":0.75,  "crossing":16 },
+			{ "rua": 29, "offset":0.75,  "crossing":16 }			
+	   		]	  	   	
+	},	
+	{
+	  	"estaRua": 31,
+	   	"cruzaCom": [
+			{ "rua": 29, "offset":0.06,  "crossing":17 },
+			{ "rua": 32, "offset":0.41,  "crossing":14 },
+	   		{ "rua": 18, "offset":1.0, "crossing":15 }
+	   		]	  	   	
+	}
+	,
+	{
+	  	"estaRua": 32,
+	   	"cruzaCom": [			
+			{ "rua": 14, "offset":0.0,  "crossing":-2 },
+			{ "rua": 5,  "offset":0.27, "crossing":11 },
+	   		{ "rua": 16, "offset":0.55, "crossing":12 },
+	   		{ "rua": 31, "offset":1.0,  "crossing":14 }
+	   		]	  	   	
+	}
+	,
+	{
+	  	"estaRua": 33,
+	   	"cruzaCom": [			
+			{ "rua": 23, "offset":0.16, "crossing":31 },
+			{ "rua": 21, "offset":0.28, "crossing":30 }
+	   		]	  	   	
+	},	
+	{
+	  	"estaRua": 34,
+	   	"cruzaCom": [			
+			{ "rua": 6,  "offset":0.12, "crossing":34 },
+			{ "rua": 15, "offset":0.76, "crossing":21 }
+	   		]	  	   	
+	},
+	{
+	  	"estaRua": 35,
+	   	"cruzaCom": [			
+			{ "rua": 6, "offset":0.22, "crossing":22 },
+			{ "rua": 5, "offset":0.76, "crossing":25 }
+	   		]	  	   	
+	}
+	]
+}
+	

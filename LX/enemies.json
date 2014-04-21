@@ -1,0 +1,334 @@
+{
+    "enemies": [
+        {
+            "number": "1",
+            "name": "cool car",
+            "imageName": "imageNames/enemies/carro2.png",
+            "width": "46",
+            "height": "22",
+            "xScale": "1",
+            "yScale": "1",
+            "points": [
+                {
+                    "startOffset": 0.01,
+                    "endOffset": 0.99,
+                    "streetNr": 14,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.01,
+                    "endOffset": 0.99,
+                    "streetNr": 32,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.41,
+                    "endOffset": 0.06,
+                    "streetNr": 31,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.65,
+                    "endOffset": 0,
+                    "streetNr": 29,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.75,
+                    "endOffset": 0,
+                    "streetNr": 30,
+                    "go": 2
+                },
+                {
+                    "startOffset": 1,
+                    "endOffset": 0.02,
+                    "streetNr": 21,
+                    "switchY": true,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.25,
+                    "endOffset": 1,
+                    "streetNr": 17,
+                    "switchY": true,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0,
+                    "endOffset": 1,
+                    "streetNr": 27,
+                    "switchY": true,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.05,
+                    "endOffset": 0,
+                    "streetNr": 28,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.65,
+                    "endOffset": 0.77,
+                    "streetNr": 5,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.27,
+                    "endOffset": 0.0,
+                    "streetNr": 32,
+                    "go": 2
+                }
+                ,
+                {
+                    "startOffset": 0.99,
+                    "endOffset": 0.0,
+                    "streetNr": 14,
+                    "go": 2
+                }
+            ]
+        },
+        {
+            "number": "2",
+            "name": "car",
+            "imageName": "imageNames/enemies/carro1.png",
+            "width": "40",
+            "height": "23",
+            "xScale": "1",
+            "points": [
+                {
+                    "startOffset": 0.20,
+                    "endOffset": 0.79,
+                    "streetNr": 2,
+                    "switchY": true,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.8,
+                    "endOffset": 0.2,
+                    "streetNr": 3,
+                    "switchY": true,
+                    "go": 2
+                }
+            ]
+        },
+        {
+            "number": "3",
+            "name": "taxi",
+            "imageName": "imageNames/enemies/taxi.png",
+            "width": "42",
+            "height": "23",
+            "initRotation": "90",
+            "xScale": "-1",
+            "points": [
+                {
+                    "startOffset": 0.01,
+                    "endOffset": 0.99,
+                    "streetNr": 9,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.99,
+                    "endOffset": 0.01,
+                    "streetNr": 9,
+                    "go": 2
+                }
+            ]
+        },
+        {
+            "number": "4",
+            "name": "cool car",
+            "imageName": "imageNames/enemies/carro2.png",
+            "width": "46",
+            "height": "22",
+            "xScale": "-1",
+            "points": [
+                {
+                    "startOffset": 0.41,
+                    "endOffset": 0.06,
+                    "streetNr": 31,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.65,
+                    "endOffset": 0,
+                    "streetNr": 29,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.75,
+                    "endOffset": 0,
+                    "streetNr": 30,
+                    "go": 2
+                },
+                {
+                    "startOffset": 1,
+                    "endOffset": 0.02,
+                    "streetNr": 21,                    
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.25,
+                    "endOffset": 1,
+                    "streetNr": 17,                    
+                    "go": 1
+                },
+                {
+                    "startOffset": 0,
+                    "endOffset": 1,
+                    "streetNr": 27,                    
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.05,
+                    "endOffset": 0,
+                    "streetNr": 28,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.65,
+                    "endOffset": 0.775,
+                    "streetNr": 5,
+                    "go": 1
+                },                
+                {
+                    "startOffset": 0.27,
+                    "endOffset": 1.0,
+                    "streetNr": 32,
+                    "go": 1
+                }
+            ]
+        },   
+        {
+            "number": "5",
+            "name": "Up there!",            
+            "width": "50",
+            "height": "24",
+            "xScale": "1",
+            "yScale": "1",
+            "isPeople": true,
+            "points": [
+                {
+                    "startOffset": 0.07,
+                    "endOffset": 0.5,
+                    "streetNr": 6,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.31,
+                    "endOffset": 0.0,
+                    "streetNr": 15,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.25,
+                    "endOffset": 0.89,
+                    "streetNr": 11,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.0,
+                    "endOffset": 0.99,
+                    "streetNr": 8,
+                    "go": 1
+                },
+                {
+                    "startOffset": 1.0,
+                    "endOffset": 0.0,
+                    "streetNr": 5,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.58,
+                    "endOffset": 0.85,
+                    "streetNr": 19,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.25,
+                    "endOffset": 0.69,
+                    "streetNr": 20,
+                    "go": 1
+                },
+                {
+                    "startOffset": 1.0,
+                    "endOffset": 0.615,
+                    "streetNr": 12,
+                    "go": 2
+                }
+            ]
+        },     
+        {
+            "number": "6",
+            "name": "People",
+            "imageName": "imageNames/enemies/pessoa.png",
+            "width": "13",
+            "height": "26",
+            "xScale": "1",
+            "yScale": "1",
+            "isPeople": true,
+            "points": [
+                {
+                    "startOffset": 0.0,
+                    "endOffset": 1.0,
+                    "streetNr": 35,
+                    "go": 1
+                },
+                {
+                    "startOffset": 1.0,
+                    "endOffset": 0.0,
+                    "streetNr": 35,
+                    "go": 2
+                }
+            ]
+        },
+        {
+            "number": "7",
+            "name": "Round-about car",
+            "imageName": "imageNames/enemies/carro2.png",
+            "width": "46",
+            "height": "22",
+            "xScale": "-1",
+            "yScale": "-1",
+            "points": [
+                {
+                    "startOffset": 0.3,
+                    "endOffset": 0.72,
+                    "streetNr": 19,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.13,
+                    "endOffset": 0.63,
+                    "streetNr": 20,
+                    "switchY": true,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0,
+                    "endOffset": 0.26,
+                    "streetNr": 5,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.78,
+                    "endOffset": 1,
+                    "streetNr": 15,
+                    "go": 1
+                },
+                {
+                    "startOffset": 0.24,
+                    "endOffset": 0,
+                    "switchY": true,
+                    "streetNr": 17,
+                    "go": 2
+                },
+                {
+                    "startOffset": 0.8,
+                    "endOffset": 0.9,
+                    "streetNr": 20,
+                    "go": 1
+                }
+            ]
+        },
+    ]
+}

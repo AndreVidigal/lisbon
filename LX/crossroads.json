@@ -1,0 +1,1023 @@
+{
+    "crossroads": [
+        {
+            "number": 1,
+            "posX": 8,
+            "posY": 1132,
+            "rua": [
+                {
+                    "nome": 1,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset":0.01,
+                    "angle":180                    
+                },
+                {
+                    "nome": 4,
+                    "selected": 0,
+                    "dir":-1,
+                    "offset":0.98,
+                    "angle":90
+                }                
+            ]
+        },
+        {
+            "number": 2,
+            "posX": 356,
+            "posY": 1152,
+            "rua": [                
+                {
+                    "nome": 1,
+                    "selected": 1,
+                    "dir": 1,
+                    "bothWays": true,
+                    "angle": 180,
+                    "offset": 0.26
+                },
+                {
+                    "nome": 10,
+                    "selected": 0,
+                    "dir": -1,
+                    "angle": 90,
+                    "offset": 1.0
+                }
+            ]
+        },
+        {
+            "number": 3,
+            "posX": 802,
+            "posY": 1132,
+            "rua": [                
+                {
+                    "nome": 1,
+                    "selected": -1,
+                    "dir": 1,
+                    "angle": 180,
+                    "offset": 0.63,
+                    "bothWays": true
+                },
+                {
+                    "nome": 9,
+                    "selected": 0,
+                    "dir": -1,
+                    "angle": 90,
+                    "offset": 1.0
+                }
+            ]
+        },
+        {
+            "number": 4,
+            "posX": 782,
+            "posY": 858,            
+            "rua": [
+                {
+                    "nome": 8,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset":0.62,
+                    "angle":0,
+                    "bothWays": true
+                },
+                {
+                    "nome": 9,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset":0.28,
+                    "angle":-90,
+                    "bothWays": true
+                }               
+            ]
+        },
+        {
+            "number": 5,
+            "posX": 396,
+            "posY": 864,                        
+            "rua": [
+                {
+                    "nome": 11,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset":0.89,
+                    "angle":115,
+                    "bothWays": true
+                },
+                {
+                    "nome": 8,
+                    "selected": 0,
+                    "dir": 1,                    
+                    "offset":0.0,
+                    "angle":-180
+                }                
+            ]
+        },
+        {
+            "number": 6,
+            "posX": 342,
+            "posY": 898,                                    
+            "rua": [                
+                {
+                    "nome": 22,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset":0.99,
+                    "angle":0
+                },
+                                {
+                    "nome": 11,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset":1.0,
+                    "angle":140
+                },
+                {
+                    "nome": 10, 
+                    "selected": 0,
+                    "dir": 1,
+                    "offset":0.01,
+                    "angle":-94
+                }
+            ]
+        },
+        {
+            "number": 7,
+            "posX": 440,
+            "posY": 720,                                                
+            "rua": [
+                {
+                    "nome": 14,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.545,
+                    "angle":180,
+                    "bothWays": true
+                },
+                {
+                    "nome": 11,
+                    "selected": 0,
+                    "dir": -1,
+                    "turn": -1,
+                    "offset": 0.63,
+                    "angle":90,
+                    "bothWays": true                    
+                }
+            ]
+        },
+        {
+            "number": 8,
+            "posX": 776,
+            "posY": 718,                                                
+            "rua": [
+                {
+                    "nome": 9,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.0,
+                    "angle":-90
+                },
+                {
+                    "nome": 14,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.975,
+                    "angle": 180,
+                    "bothWays": true
+                }
+            ]
+        },
+        {
+            "number": 9,
+            "posX": 22,
+            "posY": 900,                                                            
+            "rua": [
+                {
+                    "nome": 4,
+                    "selected": 1,
+                    "dir": 1,
+                    "angle":-90,
+                    "offset": 0.0
+                },
+                {
+                    "nome": 22,
+                    "selected": 0,
+                    "dir": 1,
+                    "angle":180,
+                    "offset": 0.06
+                }
+            ]
+        },
+        {
+            "number": 10,
+            "posX": 1008,
+            "posY": 846,                                                            
+            "rua": [                
+                {
+                    "nome": 5,
+                    "selected": 1,
+                    "dir": -1,
+                    "angle":90,
+                    "offset": 1.0
+                },
+                {
+                    "nome": 7,
+                    "selected": 1,
+                    "dir": 1,
+                    "angle": -140,
+                    "offset": 0.0
+                },
+                {
+                    "nome": 8,
+                    "selected": 0,
+                    "dir": -1,
+                    "angle": 0,
+                    "offset": 0.99
+                },                
+            ]
+        },
+        {
+            "number": 11,
+            "posX": 1004,
+            "posY": 704,                                                                        
+            "rua": [
+                {
+                    "nome": 32,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 0.27,
+                    "bothWays": true,
+                    "angle": 0
+                },
+                {
+                    "nome": 5,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.77,
+                    "bothWays": true,
+                    "angle": -90
+                }
+            ]
+        },
+        {
+            "number": 12,
+            "posX": 1208,
+            "posY": 698,                                                                        
+            "rua": [
+                {
+                    "nome": 32,
+                    "selected": -1,
+                    "dir": -1,
+                    "offset": 0.55,
+                    "bothWays": true,
+                    "angle": 0
+                },
+                {
+                    "nome": 16,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle": -140
+                }
+            ]
+        },
+        {
+            "number": 13,
+            "posX": 1708,
+            "posY": 954,                                                                        
+            "rua": [                
+                {
+                    "nome": 18,
+                    "selected": -1,
+                    "dir": 1,
+                    "offset": 0.55,
+                    "bothWays": true,
+                    "angle":130
+                },  
+                {
+                    "nome": 16,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.01,
+                    "angle":20
+                }
+            ]
+        },
+        {
+            "number": 14,
+            "posX": 1508,
+            "posY": 692,                                                                        
+            "rua": [
+                {
+                    "nome": 32,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle": 0
+                },
+                {
+                    "nome": 31,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.41,
+                    "bothWays": true,
+                    "angle": -90
+                }
+            ]
+        },
+        {
+            "number": 15,
+            "posX": 1812,
+            "posY": 840,                                                                        
+            "rua": [
+                {
+                    "nome": 31,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":30
+                },
+                {
+                    "nome": 18,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 0.9,                    
+                    "bothWays": true,
+                    "angle":-60
+                }                
+            ]
+        },
+        {
+            "number": 16,
+            "posX": 1798,
+            "posY": 424,                                                                        
+            "rua": [
+                {
+                    "nome": 29,
+                    "selected": 1,  
+                    "dir": 1,
+                    "offset": 0.0,
+                    "angle": -30
+                },                
+                {
+                    "nome": 30,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 0.75,
+                    "angle": 120
+                },
+                {
+                    "nome": 25,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle": -140
+                }                                
+            ]
+        },
+        {
+            "number": 17,
+            "posX": 1520,
+            "posY": 473,                                                                        
+            "rua": [               
+                {
+                    "nome": 29,
+                    "selected": -1,
+                    "dir": 1,
+                    "offset": 0.73,
+                    "bothWays": true,                
+                    "angle": -10
+                }
+                ,
+                {
+                    "nome": 31,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.06,
+                    "angle": -90
+                }
+            ]
+        },
+        {
+            "number": 18,
+            "posX": 1000,
+            "posY": 608,                                                                        
+            "rua": [
+                {
+                    "nome": 5,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 0.65,
+                    "angle": 87,
+                    "bothWays": true
+                },
+                {
+                    "nome": 28,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.0,
+                    "angle":180
+                }
+            ]
+        },
+        {
+            "number": 19,
+            "posX": 690,
+            "posY": 720,                                                                        
+            "rua": [
+                {
+                    "nome": 14,
+                    "selected": -1,
+                    "dir": 1,
+                    "offset": 0.85,
+                    "angle": 180,
+                    "bothWays":true
+                },
+                {
+                    "nome": 6,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 0.99,
+                    "angle":90
+                }
+            ]
+        },
+        {
+            "number": 20,
+            "posX": 1078,
+            "posY": 240,                                                                        
+            "rua": [
+                {
+                    "nome": 17,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.24,
+                    "angle":-115,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 21,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.0,
+                    "angle":170
+                },
+                {
+                    "nome": 15,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":-10
+                }
+            ]
+        },
+        {
+            "number": 21,
+            "posX": 876,
+            "posY": 290,                                                                        
+            "rua": [
+                {
+                    "nome": 34,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 0.76,
+                    "angle":75
+                }
+                ,
+                {
+                    "nome": 15,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 0.61,
+                    "angle":-10,
+                    "bothWays": true
+                }
+            ]
+        },
+        {
+            "number": 22,
+            "posX": 692,
+            "posY": 472,                                                                        
+            "rua": [
+                {
+                    "nome": 6,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 0.71,
+                    "angle":90,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 35,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.22,
+                    "angle":180
+                }
+            ]
+        },
+        {
+            "number": 23,
+            "posX": 22,
+            "posY": 244,                                                                        
+            "rua": [
+                {
+                    "nome": 11,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.03,
+                    "angle":-160,                    
+                }
+                ,
+                {
+                    "nome": 12,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.03,
+                    "angle":160
+                }
+            ]
+        },
+        {
+            "number": 24,
+            "posX": 224,
+            "posY": 386,                                                                        
+            "rua": [
+                {
+                    "nome": 11,
+                    "selected": -1,
+                    "turn":1,
+                    "dir": 1,
+                    "offset": 0.18,
+                    "angle":-160,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 13,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":155
+                }
+            ]
+        },
+        {
+            "number": 25,
+            "posX": 992,
+            "posY": 468,                                                                        
+            "rua": [
+                {
+                    "nome": 5,
+                    "selected": -1,
+                    "dir": -1,
+                    "offset": 0.51,
+                    "angle":90,
+                    "bothWays": true
+
+                }
+                ,
+                {
+                    "nome": 35,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 0.76,
+                    "angle": 0
+                }
+            ]
+        },
+        {
+            "number": 26,
+            "posX": 940,
+            "posY": 166,                                                                        
+            "rua": [
+                {
+                    "nome": 19,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.58,
+                    "angle":160
+                }
+                ,
+                {
+                    "nome": 5,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.0,
+                    "angle":-100
+                }
+            ]
+        },
+        {
+            "number": 27,
+            "posX": 974,
+            "posY": 272,                                                                        
+            "rua": [
+                {
+                    "nome": 15,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 0.78,
+                    "angle":-10,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 5,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.26,
+                    "angle":-100,
+                    "bothWays": true
+                }
+            ]
+        },
+        {
+            "number": 28,
+            "posX": 1236,
+            "posY": 454,                                                                        
+            "rua": [
+                {
+                    "nome": 27,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.0,
+                    "angle":0
+                }
+                ,
+                {
+                    "nome": 17,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":70
+                },                
+                {
+                    "nome": 26,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":170
+                }
+            ]
+        },
+         {
+            "number": 29,
+            "posX": 1236,
+            "posY": 454,                                                                        
+            "rua": [
+                {
+                    "nome": 27,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":0
+                }
+                ,
+                {
+                    "nome": 17,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 0.0,
+                    "angle":70
+                },                
+                {
+                    "nome": 26,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":170
+                }
+            ]
+        },
+        {
+            "number": 30,
+            "posX": 1270,
+            "posY": 170,                                                                        
+            "rua": [
+                {
+                    "nome": 33,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 0.28,
+                    "angle":90
+                }
+                ,
+                {
+                    "nome": 21,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 0.22,
+                    "angle":-10,
+                    "bothWays": true
+                }
+            ]
+        },
+        {
+            "number": 31,
+            "posX": 1264,
+            "posY": 102,                                                                        
+            "rua": [
+                {
+                    "nome": 23,
+                    "selected": -1,
+                    "dir": -1,
+                    "offset": 0.5,
+                    "angle":0,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 33,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.16,
+                    "angle":-90
+                }
+            ]
+        },
+        {
+            "number": 32,
+            "posX": 1460,
+            "posY": 172,                                                                        
+            "rua": [
+                {
+                    "nome": 21,
+                    "selected": -1,
+                    "dir": -1,
+                    "offset": 0.51,
+                    "angle":10,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 26,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.0,
+                    "angle":-80
+                }
+            ]
+        },
+        {
+            "number": 33,
+            "posX": 666,
+            "posY": 330,                                                                        
+            "rua": [
+                {
+                    "nome": 6,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 0.5,
+                    "angle":80,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 15,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.31,
+                    "angle":170,
+                    "bothWays": true
+                }
+            ]
+        },
+        {
+            "number": 34,
+            "posX": 606,
+            "posY": 196,                                                                        
+            "rua": [
+                {
+                    "nome": 6,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 0.29,
+                    "angle":75,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 34,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.12,
+                    "angle":177
+                }
+            ]
+        },
+        {
+            "number": 35,
+            "posX": 538,
+            "posY": 42,                                                                        
+            "rua": [
+                {
+                    "nome": 12,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.615,
+                    "angle":175,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 6,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.07,
+                    "angle":-105
+                }
+                ,
+                {
+                    "nome": 13,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.05,
+                    "angle":-80
+                }
+            ]
+        },
+        {
+            "number": 36,
+            "posX": 1080, 
+            "posY": 600,                                                                        
+            "rua": [
+                {
+                    "nome": 28,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 0.05,
+                    "angle":0,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 27,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":90
+                }
+            ]
+        }
+        ,
+        {
+            "number": 37,
+            "posX": 1000, 
+            "posY": 130,                                                                        
+            "rua": [
+                {
+                    "nome": 19,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.71,
+                    "angle":100,
+                }
+                ,
+                {
+                    "nome": 17,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.0,
+                    "angle":-120
+                }
+            ]
+        }
+         ,
+        {
+            "number": 38,
+            "posX": 822, 
+            "posY": 68,                                                                        
+            "rua": [
+                {
+                    "nome": 19,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.075,
+                    "angle":-80,
+                }
+                ,
+                {
+                    "nome": 12,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":25
+                }
+            ]
+        }
+        ,
+        {
+            "number": 39,
+            "posX": 1016, 
+            "posY": 98,                                                                        
+            "rua": [
+                {
+                    "nome": 23,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.05,
+                    "angle":180,
+                }
+                ,
+                {
+                    "nome": 20,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.25,
+                    "angle":45
+                }
+            ]
+        }
+         ,
+        {
+            "number": 40,
+            "posX": 1152, 
+            "posY": 1108,                                                                        
+            "rua": [
+                {
+                    "nome": 2,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": 0.21,
+                    "angle":-120,
+                }
+                ,
+                {
+                    "nome": 1,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 1.02,
+                    "angle":0
+                }
+            ]
+        }
+        ,
+        {
+            "number": 41,
+            "posX": 1364, 
+            "posY": 1086,                                                                        
+            "rua": [
+                {
+                    "nome": 18,
+                    "selected": 1,
+                    "dir": 1,
+                    "offset": -0.04,
+                    "angle":180,
+                }
+                ,
+                {
+                    "nome": 3,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 0.8,
+                    "angle":70
+                }
+            ]
+        },
+        {
+            "number": 42,
+            "posX": 1234, 
+            "posY": 1020,                                                                        
+            "rua": [
+                {
+                    "nome": 7,
+                    "selected": 1,
+                    "dir": -1,
+                    "offset": 1.0,
+                    "angle":70
+                }
+                ,
+                {
+                    "nome": 3,
+                    "selected": 0,
+                    "dir": -1,
+                    "offset": 0.47,
+                    "angle":-3
+                }
+            ]
+        },
+        {
+            "number": 43,
+            "posX": 296, 
+            "posY": 438,                                                                        
+            "rua": [
+                {
+                    "nome": 11,
+                    "selected": -1,
+                    "dir": 1,
+                    "offset": 0.25,
+                    "angle":-160,
+                    "bothWays": true
+                }
+                ,
+                {
+                    "nome": 15,
+                    "selected": 0,
+                    "dir": 1,
+                    "offset": 0.0,
+                    "angle":120
+                }
+            ]
+        }
+    ]
+}
