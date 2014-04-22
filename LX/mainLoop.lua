@@ -115,14 +115,15 @@ end
 
 function initializeMap()
 
-	map = display.newImageRect( "images/mapa_layer0.png", 2048, 1536)	
+	map  = display.newImageRect( "images/mapa_layer0.png", 2048, 1536)	
+	map1 = display.newImageRect( "images/mapa_layer2.png", 2048, 1536)
+
 	--map = display.newRect(  0,0,2048, 1536)	
 	--map = display.newImage( group, "images/mapa_layer0.png")	
 	--map.isVisible = false
 	map.anchorX = 0
 	map.anchorY = 0
-
-	map1 = display.newImageRect( "images/mapa_layer2.png", 2048, 1536)
+	
 	--map1 = display.newRect( 0,0, 2048, 1536)
 	--map1 = display.newImage( "images/mapa_layer2.png")
 	map1.anchorX = 0
@@ -238,9 +239,9 @@ function onCollision( event )
 	        removeListeners()
 	        timer.performWithDelay( 100, youLoose, 1)
         elseif event.object2.type == BONUS_TYPE then
-        	game.addBonus(event.object2.myName)
-        	event.object2:removeSelf()
-	        event.object2 = nil
+        	print("Bonus Catched")
+        	game.addBonus(event.object2)
+        	event.object2.alpha = 0.0
         else
         	nrObjectives = game.catchObjective(event.object2.id)
 

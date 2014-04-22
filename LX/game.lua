@@ -77,20 +77,22 @@ function createBonus()
     icon1.type = BONUS_TYPE
     icon2.type = BONUS_TYPE
 
+    icon1.myName = "bonus"
+    icon2.myName = "bonus"
+
     physics.addBody( icon1, { density = 1.0, friction = 0.3, bounce = 0.2, filter = goalCollisionFilter} )	
     physics.addBody( icon2, { density = 1.0, friction = 0.3, bounce = 0.2, filter = goalCollisionFilter} )	
 
     bonusGroup:insert(icon1)
     bonusGroup:insert(icon2)
 
-	bonusIndex = 1
-    t = math.random( 7 , 20)
+    t = math.random( 7 , 20) * 1000
     timer.performWithDelay( t, showIcon)
 
 end
 
 function showIcon()
-
+	
 	local street = math.random(1, #play.connections)
 
 	local size = #play.connections[street].cruzaCom
@@ -103,17 +105,38 @@ function showIcon()
 	x, y = setOfLines[street](randomOffset)
 	print(randomOffset, x, y)
 
+	bonusIndex = math.random(1, 2)
 	tableIcons[bonusIndex].x = x
 	tableIcons[bonusIndex].y = y
 
+
 	transition.fadeIn(tableIcons[bonusIndex], {time=500})
-	bonusIndex = bonusIndex + 1
 end
 
-function catchBonus()
-	   
+function addBonus(bonus)
+	if (bonus.type == BONUS_TYPE) then
+		points = points + 25
+		t = math.random( 7 , 20) * 1000
+    	timer.performWithDelay( t, showIcon)
+	elseif (bonus.type == GINGINHA_TYPE) then
+		points = points + 50
+	end
 end
 
+function createSounds()
+	sound_beep1 = audio.loadSound( "audio/beep1.wav" )
+	sound_beep2 = audio.loadSound( "audio/beep2.wav" )
+	sound_atmosphere = audio.loadStream( "audio/traffic2.wav"  )
+
+	audio.play(sound_atmosphere, { channel=2, loops=-1})
+	audio.setVolume( 0.2, { channel=2 } )
+	local delay = math.random( 1500, 5500)
+	timer.performWithDelay(delay, playSounds)
+end
+
+function playSounds()
+	audio.play(beep1, { channel=2 } )
+end
 
 function loadLevel(num)
 
@@ -143,7 +166,6 @@ function loadLevel(num)
         o.icon   = display.newImageRect(goalsGroup, "images/goal.png", 40, 50)
         o.icon.myName = o.name
         o.icon.id = i
-
 		
         physics.addBody( o.icon, { density = 1.0, friction = 0.3, bounce = 0.2, filter = goalCollisionFilter} )	
         
@@ -167,6 +189,7 @@ function loadLevel(num)
     end    
 
     createBonus()
+    createSounds()
 
     totalObjectives = #levelObjectives
 
