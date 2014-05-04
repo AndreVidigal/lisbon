@@ -18,6 +18,7 @@ function initializeCommand()
 	commandBrake.y =  display.contentHeight  - 40
 
 	commandBrake.isVisible = false
+	commandGo.isVisible = false
 
 	command_ = display.newRect( display.contentWidth, display.contentHeight, 100, 75)
 	command_:setFillColor(0.1, 0.3, 0.5, 0.1)

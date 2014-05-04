@@ -21,12 +21,28 @@ local image
 --display.setDefault( "anchorX", 0)
 --display.setDefault( "anchorY", 0)
 
+local options =
+{
+    effect = "crossFade",
+    time = 300,
+}
+
 
 -- Touch event listener for background image
 local function onSceneTouch( self, event )
-	if event.phase == "began" then			
-		storyboard.gotoScene( "scenelevel")	
-		return true
+	print(">name and DAY", self.name, self.day)
+	if event.phase == "began" then
+		
+		if self.name == "menu" then						
+			--local custom = { effect="slideRight", time=400, start=false }
+			options.params =   { start=false }
+			storyboard.gotoScene ( "start", options)			
+		else
+			--local custom = { effect="flip", time=400, day = self.day }	
+			options.params =   { day=self.day }
+			storyboard.gotoScene( "scenelevel", options )	
+			return true
+		end
 	end
 end
 
@@ -61,6 +77,8 @@ function loadImages(group)
 		_2i_ = display.newImageRect(group, "images/indice/quiosque.png", 102 / 1.71, 123 /1.71)
 		_3_ = display.newImageRect(group, "images/indice/3_lisbonlovers2.png", 530 / 1.71, 86/1.71)
 		_3i_ = display.newImageRect(group, "images/indice/electrico.png", 135 / 1.71, 59 /1.71)
+		_4_ = display.newImageRect(group, "images/indice/4_ginginha2.png", 400/1.71 , 125/1.71 )
+		_4i_ = display.newImageRect(group, "images/indice/ginginha.png", 56/1.71 , 170/1.71)
 		_5_ = display.newImageRect(group, "images/indice/5_museus2.png", 306 / 1.71, 100 /1.71)
 		_5i_ = display.newImageRect(group, "images/indice/torre.png", 190/1.71 , 186/1.71 )
 		_6_ = display.newImageRect(group, "images/indice/6_santini2.png", 337 / 1.71, 92 /1.71)
@@ -69,59 +87,56 @@ function loadImages(group)
 		_7i_ = display.newImageRect(group, "images/indice/pasteisbelem.png", 105 / 1.71, 108 /1.71)
 	end
 
-	
 	fundo.anchorX = 0
 	fundo.anchorY = 1
 	fundo.y = display.contentHeight
-
-
 	
 	indice.x =  display.contentWidth / 2
 	indice.y = -1
-
-	
-	tracejado1.y = 180
+		
 	tracejado1.anchorX = 0
-
 	
 	tracejado2.y = 180
 	tracejado2.anchorX = 0
 	tracejado2.x = tracejado1.width
 	--tracejado2:setFillColor( 0.5 )
-	--tracejado2.isVisible = false
-
+	--tracejado2.isVisible = false	
 	
 	_1_.y = display.contentHeight/2 - 200
 	_1_.x = 0
+	_1_.name = "monday" 
+	_1_.day = 1 -- level to be loaded
 	_1_.touch = onSceneTouch
-	
 	
 	_1i_.y = display.contentHeight/2 - 200 + (647 / 1.71)
 	_1i_.x = 0
 	_1i_.isVisible = false
-
-
-	
-	_2_.y = display.contentHeight/2 - 160
+		
 	_2_.x = display.contentWidth
-
+	_2_.name = "tuesday"
+	_2_.day = 2 -- level to be loaded
+	_2_.touch = onSceneTouch
 	
 	_2i_.y = display.contentHeight/2 - 150 + (372 / 1.71)
 	_2i_.x = 0
 	_2i_.isVisible = false
 
 	
-	_3_.y = display.contentHeight/2 - 70
 	_3_.x = display.contentWidth
-
+	_3_.name = "wednesday"	
+	_3_.day = 3 -- level to be loaded
+	_3_.touch = onSceneTouch
 	
 	_3i_.y = display.contentHeight/2 - 60 + (519 / 1.71)
 	_3i_.x = 0
 	_3i_.isVisible = false
 
-	
-	_4_.y = display.contentHeight/2 - 60
+		
 	_4_.x = 0
+	_4_.name = "thursday"
+	_4_.day = 4 -- level to be loaded
+	_4_.touch = onSceneTouch
+
 
 	
 	_4i_.y = display.contentHeight/2 - 60 + (393 / 1.71)
@@ -129,8 +144,11 @@ function loadImages(group)
 	_4i_.isVisible = false
 
     
-	_5_.y = display.contentHeight/2 +24
+	
 	_5_.x = 0
+	_5_.name = "friday"
+	_5_.day = 5 -- level to be loaded
+	_5_.touch = onSceneTouch
 
 	
 	_5i_.y = display.contentHeight/2 - 60 + (393 / 1.71)
@@ -138,17 +156,21 @@ function loadImages(group)
 	_5i_.isVisible = false
 
 	
-	_6_.y = display.contentHeight/2 + 110
-	_6_.x = 0
-
 	
-	_6i_.y = display.contentHeight/2 - 60 + (393 / 1.71)
+	_6_.x = 0
+	_6_.name = "saturday"
+	_6_.day = 6 -- level to be loaded
+	_6_.touch = onSceneTouch
+		
 	_6i_.x = 0
+	_6i_.y = display.contentHeight/2 - 60 + (393 / 1.71)
 	_6i_.isVisible = false
 
-	
-	_7_.y = display.contentHeight/2 + 175
+		
 	_7_.x = display.contentWidth
+	_7_.name = "sunday"
+	_7_.day = 7 -- level to be loaded
+	_7_.touch = onSceneTouch
 
 	
 	_7i_.y = display.contentHeight/2 - 60 + (393 / 1.71)
@@ -158,14 +180,50 @@ function loadImages(group)
 	--auxFunctions:setImage(tracejado)
 	imgTimer = Runtime:addEventListener("enterFrame", moveTracejado)
 
-	transition.moveBy( indice, { y = 86, time= 800 } )
-	transition.moveBy( _1_, { x = display.contentWidth/2 - 310, time=620 })
-	transition.moveBy( _2_, { x = -display.contentWidth/2 + 170 , time=620 })
-	transition.moveBy( _3_, { x = -display.contentWidth/2 + 300, time=620 })
-	transition.moveBy( _4_, { x = display.contentWidth/2 - 325, time=620 })
-	transition.moveBy( _5_, { x = display.contentWidth/2-5, time=620 })
-	transition.moveBy( _6_, { x = display.contentWidth/2-310, time=620 })
-	transition.moveBy( _7_, { x = -display.contentWidth/2+300, time=620 })
+	if (display.pixelWidth == 1536) and (display.pixelHeight ==  2048) then		
+		transition.moveBy( indice, { y = 98, time= 800 } )
+		tracejado1.y = 230		
+		tracejado2.y = 230		
+		_1_.y = display.contentHeight/2 - 400
+		transition.moveBy( _1_, { x = display.contentWidth/2 - 490, time=620 })
+		_2_.y = display.contentHeight/2 - 310
+		transition.moveBy( _2_, { x = -display.contentWidth/2 + 320, time=620 })
+		_3_.y = display.contentHeight/2 - 110
+		transition.moveBy( _3_, { x = -display.contentWidth/2 + 485, time=620 })
+		_4_.y = display.contentHeight/2 - 60
+		transition.moveBy( _4_, { x = display.contentWidth/2 - 550, time=620 })
+		_5_.y = display.contentHeight/2 + 102
+		transition.moveBy( _5_, { x = display.contentWidth/2, time=620 })
+		_6_.y = display.contentHeight/2 + 245		
+		transition.moveBy( _6_, { x = display.contentWidth/2-540, time=620 })
+		_7_.y = display.contentHeight/2 + 325
+		transition.moveBy( _7_, { x = -display.contentWidth/2 + 500, time=620 })
+		icon_space = 100
+	else 
+		transition.moveBy( indice, { y = 86, time= 800 } )
+		tracejado1.y = 180		
+		tracejado2.y = 180		
+		_1_.y = display.contentHeight/2 - 200
+		transition.moveBy( _1_, { x = display.contentWidth/2 - 310, time=620 })
+		_2_.y = display.contentHeight/2 - 160
+		transition.moveBy( _2_, { x = -display.contentWidth/2 + 170 , time=620 })
+		_3_.y = display.contentHeight/2 - 70
+		transition.moveBy( _3_, { x = -display.contentWidth/2 + 300, time=620 })
+		_4_.y = display.contentHeight/2 - 60
+		transition.moveBy( _4_, { x = display.contentWidth/2 - 325, time=620 })
+		_5_.y = display.contentHeight/2 +24
+		transition.moveBy( _5_, { x = display.contentWidth/2-5, time=620 })
+		_6_.y = display.contentHeight/2 + 110		
+		transition.moveBy( _6_, { x = display.contentWidth/2-310, time=620 })
+		_7_.y = display.contentHeight/2 + 175
+		transition.moveBy( _7_, { x = -display.contentWidth/2+300, time=620 })
+		icon_space = 50
+	end
+		
+	
+		
+	
+		
 	timer.performWithDelay( 1000, showAndorinha )
 	timer.performWithDelay( 1300, showQuiosque )
 	timer.performWithDelay( 1600, showElectrico )
@@ -182,8 +240,8 @@ function loadImages(group)
 	cacilheiro = display.newImageRect(group,    "images/indice/cacilheiro.png", 214/1.65, 140/1.65)
 	cruzeiro   = display.newImageRect(group,    "images/indice/cruzeiro.png",   217/1.65, 160/1.65)
 	--cruzeiro   = display.newRect( 0,0,  217/1.65, 160/1.65)
-	--cruzeiro:setFillColor( 1, 1, 0 )
-	cargueiro  = display.newImageRect(group,    "images/indice/cargueiro.png",  298/1.65, 201/1.65)
+	--cruzeiro:setFillColor( 1, 1, 0 )	
+	cargueiro  = display.newImageRect(group, "images/indice/cargueiro.png",  298/1.65, 201/1.65)
 	
 
 	cargueiro.y  =  display.contentHeight - 70
@@ -220,6 +278,12 @@ function loadImages(group)
 	ship3.value = 0.2
 	ship3.direction = RIGHT
 
+	local font_2 = "Belta Bold"
+	menu     = display.newText( group, "menu", cargueiro.x -130 , display.contentHeight - 42, font_2, 64 )
+	menu:setFillColor(232/255,197/255,11/255)
+	menu.touch = onSceneTouch
+	menu.name = "menu" 
+
 	Runtime:addEventListener("enterFrame", bouncingBoat)
 
 	-- fundo = display.newImageRect(group,    "images/indice.png", display.contentWidth, display.contentHeight)
@@ -237,58 +301,58 @@ function loadImages(group)
 end
 
 function showAndorinha()
-	_1i_.x = _1_.x + _1_.width/2 + 50
+	_1i_.x = _1_.x + _1_.width/2 + icon_space
 	_1i_.y = _1_.y
 	_1i_.isVisible = true
 end
 
 
 function showQuiosque()
-	_2i_.x = _2_.x + _2_.width/2 + 50
+	_2i_.x = _2_.x + _2_.width/2 + icon_space
 	_2i_.y = _2_.y
 	_2i_.isVisible = true
 end
 
 
 function showElectrico()
-	_3i_.x = _3_.x + _3_.width/2 + 50
+	_3i_.x = _3_.x + _3_.width/2 + icon_space
 	_3i_.y = _3_.y
 	_3i_.isVisible = true
 end
 
 
 function showGinginha()
-	_4i_.x = _4_.x + _4_.width/2 + 50
+	_4i_.x = _4_.x + _4_.width/2 + icon_space
 	_4i_.y = _4_.y
 	_4i_.isVisible = true
 end
 
 function showMuseus()
-	_5i_.x = _5_.x + _5_.width/2 + 50
+	_5i_.x = _5_.x + _5_.width/2 + icon_space
 	_5i_.y = _5_.y
 	_5i_.isVisible = true
 end
 
 function showSantini()
-	_4i_.x = _4_.x + _4_.width/2 + 50
+	_4i_.x = _4_.x + _4_.width/2 + icon_space
 	_4i_.y = _4_.y
 	_4i_.isVisible = true
 end
 
 function showPasteisDeBelem()
-	_5i_.x = _5_.x + _5_.width/2 + 50
+	_5i_.x = _5_.x + _5_.width/2 + icon_space
 	_5i_.y = _5_.y
 	_5i_.isVisible = true
 end
 
 function showSantini()
-	_6i_.x = _6_.x + _6_.width/2 + 50
+	_6i_.x = _6_.x + _6_.width/2 + icon_space
 	_6i_.y = _6_.y
 	_6i_.isVisible = true
 end
 
 function showPasteisDeBelem()
-	_7i_.x = _7_.x + _7_.width/2 + 50
+	_7i_.x = _7_.x + _7_.width/2 + icon_space
 	_7i_.y = _7_.y
 	_7i_.isVisible = true
 end
@@ -333,6 +397,7 @@ function bouncingBoat()
     
 	    
     transition.to( cargueiro, { rotation=ship1.angle, time=0, x = ship1.image.x -ship1.value, transition=easing.inOutCubic } )
+    transition.to( menu,      { time=0, x = ship1.image.x-ship1.value-130, transition=easing.inOutCubic } )
     transition.to( cacilheiro,{ rotation=ship2.angle, time=0, x = ship2.image.x -ship2.value, transition=easing.inOutCubic } )
 end
 
@@ -390,6 +455,8 @@ end
 function scene:createScene( event )
 	--local screenGroup = self.view
 	local group = self.view
+
+	print( "1 - oh it's true....",event.params.start )
 	
 	print(display.contentWidth, display.contentHeight)
 	print("CW and CH", display.contentWidth, display.contentHeight)	
@@ -406,13 +473,22 @@ function scene:enterScene( event )
 	
 	-- remove previous scene's view
 	--storyboard.purgeScene( "scene4" )
+	if event.params.start == true then	
+		print( "2 - oh it's true....",event.params.start )
+		-- Entrar mo jogo
+		local nextScene = function()
+			_1_:addEventListener( "touch", _1_ )
+			_2_:addEventListener( "touch", _2_ )
+			_3_:addEventListener( "touch", _3_ )
+			_4_:addEventListener( "touch", _4_ )
+			_5_:addEventListener( "touch", _5_ )
+			_6_:addEventListener( "touch", _6_ )
+			_7_:addEventListener( "touch", _7_ )
+			menu:addEventListener( "touch", menu)
+		end
 
-	-- Entrar mo jogo
-	local nextScene = function()
-		_1_:addEventListener( "touch", _1_ )
+		timer.performWithDelay( 3000, nextScene, 1 )
 	end
-
-	timer.performWithDelay( 3000, nextScene, 1 )
 end
 
 
@@ -423,7 +499,7 @@ function scene:exitScene( event )
 	print( "indice: exitScene event" )
 	
 	-- remove touch listener for image
-	_1_:removeEventListener( "touch", _1_ )
+	--_1_:removeEventListener( "touch", _1_ )
 
 
 	-- removes this scene

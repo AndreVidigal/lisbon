@@ -5,9 +5,9 @@ local FORWARD  =  1
 local BACKWARD = -1
 TRAM_SPEED    =  0.005
 
-local STARTS_ON    = 11
-local START_OFFSET = 0.1
-local START_DEST   = 2 -- goes to index 2 on connections[STARTS_ON]
+--local starts_on    = 11
+--local starts_offset = 0.1
+--local starts_dest   = 2 -- goes to index 2 on connections[starts_on]
 local INIT_DIRECTION = 1
 
 savedSpeed = TRAM_SPEED
@@ -38,8 +38,16 @@ function loadConnectionsAndCrossroads()
 end
 
 
+function getNextDest(initialStreet, initialOffset)
+	i = 1
+	while(connections[initialStreet].cruzaCom[i].offset < initialOffset) do
+		i = i + 1
+	end
+	return i	
 
-function initLisbonTram(groupie)	
+end
+
+function initLisbonTram(groupie, initialStreet, initialOffset)	
 
 	localGroup = groupie
 
@@ -47,6 +55,10 @@ function initLisbonTram(groupie)
 
 	lisbonTram.image   = display.newImageRect( "images/lisbonTram.png", 60, 27)
 	lisbonTram.image.myName = "LisbonTram"
+
+	starts_on     = initialStreet
+	starts_offset = initialOffset
+	starts_dest   = getNextDest(initialStreet, initialOffset)
 
 	command.initializeCommand()
 	resetTram()
@@ -306,14 +318,37 @@ function getNextStreetWithNoConnection(street1, street2)
 end
 
 
+function restart()
+	lisbonTram.image.x  = math.floor( x )
+    lisbonTram.image.y  = math.floor( y )    
+    a, b = myUtil:paralax(x, y)
+    localGroup.x = a
+    localGroup.y = b
+	auxFunctions:stopGlow(lisbonTram.image)
+	command.command_.stopped = true
+	--physics.pause( )
+	physics.removeBody( lisbonTram.image )
+	print("Timer")
+	auxFunctions:glow(lisbonTram.image)
+	timer.performWithDelay( 7000, resumePhysics , 1)
+end
+
+function resumePhysics()
+	print("resume")
+	auxFunctions:stopGlow(lisbonTram.image)
+	physics.addBody( lisbonTram.image, { density = 22.0, friction = 71.3, bounce = 0.0, 
+		                                 filter = lisbonTramCollisionFilter, shape = shapeTram} )	
+	
+end
+
 -- This function is like a reset to restart the game or just start for the 1st time
 function resetTram()
-	lisbonTram.street      = connections[STARTS_ON].estaRua
-	lisbonTram.offset      = START_OFFSET
+	lisbonTram.street      = connections[starts_on].estaRua
+	lisbonTram.offset      = starts_offset
 	lisbonTram.direction   = INIT_DIRECTION	
-	lisbonTram.destOffset  = connections[STARTS_ON].cruzaCom[START_DEST].offset
-	lisbonTram.destCross   = connections[STARTS_ON].cruzaCom[START_DEST].crossing
-	lisbonTram.previousX,  lisbonTram.previousY  = setOfLines[STARTS_ON](0.0)
+	lisbonTram.destOffset  = connections[starts_on].cruzaCom[starts_dest].offset
+	lisbonTram.destCross   = connections[starts_on].cruzaCom[starts_dest].crossing
+	lisbonTram.previousX,  lisbonTram.previousY  = setOfLines[starts_on](0.0)
 
 	transition.to( lisbonTram.image, { rotation = 0,  time=0} )
 
@@ -321,11 +356,11 @@ function resetTram()
 
 	-- START GAME WITH TRAM STOPPED
 	command.resetCommand()	
-
 end
 
+
 function initParallaxMap()			
-    x, y = setOfLines[STARTS_ON](START_OFFSET)
+    x, y = setOfLines[starts_on](starts_offset)
     lisbonTram.image.x  = math.floor( x )
     lisbonTram.image.y  = math.floor( y )    
     a, b = myUtil:paralax(x, y)
@@ -370,7 +405,7 @@ end
 
 -- function startGame()
 -- 	-- -- wait a second and start Tram
--- 	--  x, y  = setOfLines[STARTS_ON](START_OFFSET)
+-- 	--  x, y  = setOfLines[starts_on](starts_offset)
 --  -- --    -- if so, then let's have the screen following it!      
 --  --     a, b = myUtil:paralax(x, y)  
 --  --     group.x = a

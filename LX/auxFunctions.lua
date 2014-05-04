@@ -3,10 +3,33 @@ module(...,package.seeall)
 local bezier = require('bezier')
 local json    = require("json")
 
+local stopGlow = false
 
 -- prints the coordinates of mouse click
 function printPoint(event)
 	print("auxFunctions:printPoint", math.floor(event.x), math.floor(event.y))
+end
+
+
+function auxFunctions:stopShake(image)
+	transition.cancel( transShake )
+end
+
+
+function shakeRandom1(e)
+	transShake = transition.to(e, { time = 0, delay=500,  rotation = math.random(5, 21) / 10, onComplete = shakeRandom2 } )
+end
+
+function shakeRandom2(e)
+	transShake = transition.to(e, { time=0,  delay=300, rotation = -1*math.random(2, 19)/10, onComplete = shakeRandom2 } )	
+end
+
+function shake1(e)
+	transShake = transition.to(e, { time = 0, delay=500,  rotation = 0.7, onComplete = shake2 } )
+end
+
+function shake2(e)
+	transShake = transition.to(e, { time=0,  delay=300, rotation = -0.8, onComplete = shake1 } )	
 end
 
 
@@ -80,17 +103,43 @@ function auxFunctions:rotateImage2(vehicle, image)
 	transition.to( vehicle.image1, { rotation = angle,  time=0} )
 end	
 
+
+function auxFunctions:stopGlow(image)
+	image.alpha = 1.0
+	transition.cancel( trans )
+end
+
 function auxFunctions:glow(image)
-	transition.to(image,{time=1000,alpha=0.5, onComplete = function1})
+	trans = transition.to(image, { time=500,alpha=0.5, onComplete = function1 } )
 end
 
 function function1(e)
-  trans = transition.to(e,{time=1000,alpha=1, onComplete=function2})
+  	trans = transition.to(e, { time=500, alpha=1, onComplete=function2 })
 end
 
 function function2(e)
-  trans = transition.to(e,{time=1000,alpha=0.5, onComplete=function1})
+  	trans = transition.to(e, {time=500, alpha=0.3, onComplete=function1 })
 end
+
+function auxFunctions:stopGlowCircle(image)
+	image.alpha = 1.0
+	transition.cancel( trans )
+end
+
+function auxFunctions:glowCirlce(image)
+	trans = transition.to(image, { time=500,alpha=0.5, onComplete = function1 } )
+end
+
+function function1_gc(e)
+  	trans = transition.to(e, { time=500, alpha=1, onComplete=function2_gc })
+end
+
+function function2_gc(e)
+  	trans = transition.to(e, {time=500, alpha=0.3, onComplete=function1_gc })
+end
+
+
+
 
 
 -- Loads the File whith map
@@ -281,7 +330,7 @@ function printFonts()
 	print( "Font count: " .. count )
 end
 
---Runtime:addEventListener( "tap", printPoint )
+Runtime:addEventListener( "tap", printPoint )
 
 
 --createCircle(200,200, 50)

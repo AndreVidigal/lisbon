@@ -16,18 +16,70 @@ local scene = storyboard.newScene()
 --local centerY = display.contentCenterY
 
 local image
+local PT = 1
+local EN = 2
+local SOUND_ON  = 1
+local SOUND_OFF = 2
+
+local lan_sel = PT
+local sound   = SOUND_ON
+
+local custom
+local started = true
 
 --display.setDefault( "anchorX", 0)
 --display.setDefault( "anchorY", 0)
 
+local options =
+{
+    --effect = "fade",
+    --time = 100,
+}
+
 
 -- Touch event listener for background image
 local function onSceneTouch( self, event )
-	if event.phase == "began" then		
-		print("goes to scene")		
-		storyboard.gotoScene( "indice" )
+	if event.phase == "began" then						
+		if started == true then			
+			options.params = { start = true }			
+		else 			
+			options.params = { start = false }						
+		end
+		storyboard.gotoScene( "indice", options)			
 		return true
 	end
+end
+
+
+function changeLanguage(event)
+	if event.phase == "began" then				
+		if (lan_sel == EN and event.target.id == PT) then
+			lan_sel = PT
+			language_pt:setFillColor( 232/255,197/255,11/255 )
+			language_en:setFillColor( 1 )
+			entrarImage.text = "entrar"
+		end
+		if (lan_sel == PT and event.target.id == EN) then 
+			lan_sel = EN
+			language_en:setFillColor( 232/255,197/255,11/255 )		
+			language_pt:setFillColor( 1 )
+			entrarImage.text = "enter"
+		end
+	end
+end
+
+function changeSound(event)	
+	if sound == SOUND_ON then
+		print("Put sound off")
+		sound = SOUND_OFF
+		noSound.alpha = 0.7
+		audio.setVolume( 0.0 )			
+	else		
+		sound = SOUND_ON
+		print("Put sound on")
+		noSound.alpha = 0.0			
+		audio.setVolume( 1.0 )			
+	end	
 end
 
 function loadImages(group)
@@ -37,6 +89,7 @@ function loadImages(group)
 	group:insert(grupo)
 	group:insert(grupo2)
 
+	local font_2 = "Belta Bold"
 		
 	if (display.pixelWidth == 1536) and (display.pixelHeight ==  2048) then	
 		fundo       	= display.newImageRect( grupo, "images/start/lxcapa_fundo@2x.png", 2048, 3071)	
@@ -45,16 +98,35 @@ function loadImages(group)
 		cacilheiroImage = display.newImageRect( grupo, "images/start/cacilheiro.png", 110/2, 139/2)
 		aviaoImage 		= display.newImageRect( grupo, "images/start/aviao.png", 468/2, 280/2)	
 		electricoImage 	= display.newImageRect( grupo, "images/start/electrico.png", 290/2, 195/2)
-		entrarImage 	= display.newImageRect( grupo, "images/start/entrar.png", 190, 66)
+		--entrarImage 	= display.newImageRect( grupo, "images/start/entrar.png", 190, 66)		
+		language_pt     = display.newText( grupo, "local (PT) | ", display.contentWidth/2 - 120 , 3000,  font_2, 64 )
+		language_en     = display.newText( grupo, "tourist (EN) ", display.contentWidth/2 + 120 , 3000,  font_2, 64 )
+		soundArea       = display.newCircle( display.contentWidth -81,  display.contentHeight - 76 , 50)			
+		noSound	   		= display.newImageRect( grupo, "images/start/nosound.png", 100, 100)
+		noSound.x       = display.contentWidth - 83
+		noSound.y       = 3000 - 22
 	else 
 		fundo       	= display.newImageRect( grupo, "images/start/lxcapa_fundo.png", 1200, 1799 )	
 		cloudsImage 	= display.newImageRect( grupo2,"images/start/farAwayClouds.png", 1200, 579 )	
 		shipImage       = display.newImageRect( grupo, "images/start/ship.png", 298/2, 334/2)
 		cacilheiroImage = display.newImageRect( grupo, "images/start/cacilheiro.png", 110/2, 139/2)
 		aviaoImage 		= display.newImageRect( grupo, "images/start/aviao.png", 468/2, 280/2)	
-		electricoImage 	= display.newImageRect( grupo, "images/start/electrico.png", 290/2, 195/2)
-		entrarImage 	= display.newImageRect( grupo, "images/start/entrar.png", 190, 66)
+		electricoImage 	= display.newImageRect( grupo, "images/start/electrico.png", 290/2, 195/2)		
+		--entrarImage 	= display.newImageRect( grupo, "images/start/entrar.png", 190, 66)	
+		language_pt     = display.newText( grupo, "local (PT)  | ", display.contentWidth/2 - 120 , 1744,  font_2, 58 )
+		language_en     = display.newText( grupo, " tourist (EN) ", display.contentWidth/2 + 120 , 1744,  font_2, 58 )
+		soundArea    	= display.newCircle( display.contentWidth -52, display.contentHeight - 52 , 40)			
+		noSound	   		= display.newImageRect( grupo, "images/start/nosound.png", 60,  60)			
+		noSound.x       = display.contentWidth - 53
+		noSound.y       = 1744
 	end
+
+	language_pt:setFillColor(232/255,197/255,11/255)
+	language_pt.id = PT
+	language_en.id = EN
+	language_pt:addEventListener("touch", changeLanguage)
+	language_en:addEventListener("touch", changeLanguage)
+	
 
 	fundo.anchorX = 0
 	fundo.anchorY = 0
@@ -101,12 +173,18 @@ function loadImages(group)
 	ships[1] = cacilheiro1
 
 	--- Entrar only appears after scrolling ---
+	entrarImage 	= display.newText( grupo, "entrar", 0, 0, font_2, 60)
 	entrarImage.isVisible = false
 	entrarImage.anchorX = 0.5
 	entrarImage.x = display.contentWidth / 2
 	entrarImage.y = fundo.height / 1.6
 	entrarImage.touch = onSceneTouch
+	entrarImage:setFillColor(134/255,163/255,156/255)
 
+	-- SOUND			
+	soundArea.alpha = 0.0
+	noSound.alpha = 0.0
+	soundArea.isHitTestable = true			
 end
 
 function initBoat()
@@ -198,35 +276,46 @@ end
 function scene:enterScene( event )
 	local group = self.view
 
-	print( "1: enterScene event" )
-	displayFonts()
-	local backgroundMusic = audio.loadStream( "audio/deolinda.mp3" )
-	audio.play( backgroundMusic, {channel=1, loop=-1} )
-	
-	-- remove previous scene's view
-	--storyboard.purgeScene( "scene4" )
-	
-	-- aviao flies by
-	transition.to( aviaoImage, { y = display.contentHeight / 4, x = display.contentWidth + 200,  time=3700, transition = easing.linear } )
-	-- image pans down
-	timer.performWithDelay(3200, panImage, 1)
-	
-	-- hide the Whale
-	--timer.performWithDelay(6000, hideWhale, 1)
+	print( "1: enterScene event", event.params.start, event.params.effect )
 
-	-- Boats and ships start cruising...
-	initBoat()
-	
-	-- Entrar menu goes in!
-	local nextScene = function()
+	if event.params.start == true then			
+		local backgroundMusic = audio.loadStream( "audio/deolinda.mp3" )
+		--audio.play( backgroundMusic, {channel=1, loop=-1} )
+
+		
+		-- remove previous scene's view
+		--storyboard.purgeScene( "scene4" )
+		
+		-- aviao flies by
+		transition.to( aviaoImage, { y = display.contentHeight / 4, x = display.contentWidth + 200,  time=3700, transition = easing.linear } )
+		-- image pans down
+		timer.performWithDelay(3200, panImage, 1)
+		
+		-- hide the Whale
+		--timer.performWithDelay(6000, hideWhale, 1)
+
+		-- Boats and ships start cruising...
+		initBoat()
+		
+		-- Entrar menu goes in!
+		local nextScene = function()
+			entrarImage:addEventListener( "touch", entrarImage )
+			entrarImage.isVisible = true
+		end
+
+		local soundCommand = function()
+			soundArea:addEventListener("tap", changeSound)				
+		end
+
+		timer.performWithDelay( 8000, soundCommand, 1 )
+		timer.performWithDelay( 9000, nextScene, 1 )
+		print(display.contentHeight, display.viewableContentHeight, fundo.height)
+		
+		--timer.performWithDelay(3000, nextScene, 1)
+	else
 		entrarImage:addEventListener( "touch", entrarImage )
-		entrarImage.isVisible = true
+		started = false
 	end
-
-	timer.performWithDelay( 9000, nextScene, 1 )
-	print(display.contentHeight, display.viewableContentHeight, fundo.height)
-	
-	--timer.performWithDelay(3000, nextScene, 1)
 end
 
 function panImage()
